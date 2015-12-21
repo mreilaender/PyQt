@@ -10,3 +10,4 @@ class ButtonHandler(object):
     def reset(self):
         for name in self.buttons:
             self.buttons[name].setEnabled(True)
+        self.buttons = {}
