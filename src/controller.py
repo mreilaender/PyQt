@@ -21,6 +21,7 @@ class Controller(QWidget):
         self.setup_signals()
         self.model.set_labels(self.view.left_value, self.view.correct_value, self.view.wrong_value,
                               self.view.total_value, self.view.games_value)
+        self.model.set_default_values(left=self.view.left_value.text())
 
     def setup_signals(self):
         self.view.pushButton.clicked.connect(lambda: self.model.on_button_pressed(self.view.pushButton))
@@ -38,6 +39,7 @@ class Controller(QWidget):
         self.view.pushButton_13.clicked.connect(lambda: self.model.on_button_pressed(self.view.pushButton_13))
         self.view.pushButton_14.clicked.connect(lambda: self.model.on_button_pressed(self.view.pushButton_14))
         self.view.pushButton_15.clicked.connect(lambda: self.model.on_button_pressed(self.view.pushButton_15))
+        self.view.new_game.clicked.connect(self.model.reset)
 
 app = QApplication(sys.argv)
 controller = Controller()
