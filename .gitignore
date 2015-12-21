@@ -1,2 +1,5 @@
 # IntelliJ files/directories
 .idea
+
+#
+src/__pycache__/
